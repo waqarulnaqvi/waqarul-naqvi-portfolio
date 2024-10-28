@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "752520042022",
+    "project_id": "waqarul-naqvi-portfolio",
+    "storage_bucket": "waqarul-naqvi-portfolio.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:752520042022:android:0f1c55243d7b68515df8e7",
+        "android_client_info": {
+          "package_name": "com.waqarulnaqvi.portfolio"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBqtOMoPtcImIBIgXQ8gJb0tT9x0xyE8Vs"
+        }
+      ],
+
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
