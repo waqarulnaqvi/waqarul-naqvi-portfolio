@@ -12,7 +12,7 @@ class ProjectUtils {
 }
 
 List<ProjectUtils>  projectutils=[
-  ProjectUtils(name: "Brain Booster: Focus & Relax",
+  ProjectUtils(name: "Brain Booster",
       description: "Brain Booster is an audio app with binaural beats and calming music to improve focus, clarity, and relaxation. Ideal for meditation, studying, or stress relief, it offers customizable playlists and a helpful FAQ section. Download now on the Google Play Store!",
       image: 'assets/projects/brainboosterfocusandrelaxbg.jpg',
       playstoreLink: "https://play.google.com/store/apps/details?id=com.mysteriouscoder.brainbooster"),
@@ -32,7 +32,7 @@ List<ProjectUtils>  projectutils=[
       image: 'assets/projects/mazedarhindijokesbg.jpg',
       playstoreLink: "https://play.google.com/store/apps/details?id=com.mysteriouscoder.mazedarhindijokes"),
 
-  ProjectUtils(name: "NoteMaster: Offline Organizer",
+  ProjectUtils(name: "NoteMaster",
       description: "NoteMaster: Offline Organizer is your go-to app for organizing notes, tasks, and ideas without needing an internet connection. Perfect for managing to-do lists, reminders, and important thoughts. Stay organized anytime, anywhere. Download now on the Google Play Store!",
       image: 'assets/projects/notemasterbg.jpg',
       playstoreLink: "https://play.google.com/store/apps/details?id=com.mysteriouscoder.notemaster"),

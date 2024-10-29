@@ -4,6 +4,7 @@ import 'package:portfolio/widgets/typingeffect.dart';
 
 import '../common/widgets/all_platform_links.dart';
 import '../constants/colors.dart';
+import '../constants/size.dart';
 
 class MainDesktop extends StatelessWidget {
   final screenSize;
@@ -58,8 +59,30 @@ class MainDesktop extends StatelessWidget {
                       ))),
             ],
           ),
-          Image.asset("assets/images/waqarul.png",
-              width: screenSize.width /2.8,height: screenSize.height ),
+          ConstrainedBox(
+            constraints: const BoxConstraints(
+              maxWidth: kMedDesktopWidth/2,
+            ),
+            child: Container(
+              decoration: BoxDecoration(
+                border: Border.all(
+                  color: CustomColor.whiteSecondary, // Border color
+                  width: 3.0,         // Border width
+                ),
+                borderRadius: BorderRadius.circular(20.0),
+              ),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(20.0),
+                child: Image.asset(
+                  "assets/images/waqarul.jpg",
+                  // height: screenSize.height/1.2 ,
+                  width: screenSize.width / 2.8,
+                  fit: BoxFit.cover,
+                  // fit: screenSize.width> kMedDesktopWidth ?BoxFit.fill: BoxFit.cover,
+                ),
+              ),
+            ),
+          ),
         ],
       ),
     );

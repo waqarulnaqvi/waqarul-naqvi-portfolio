@@ -34,13 +34,29 @@ class MainMobile extends StatelessWidget {
               //     ).createShader(bounds);
               //   },
               //   blendMode: BlendMode.srcATop,
-              //   child: Image.asset("assets/images/waqarul.png",
+              //   child: Image.asset("assets/images/waqarul.jpg",
               //       width:screenSize.width/1.5),
               // ),
-              Image.asset("assets/images/waqarul.png",
-                  width:screenSize.width/2,height: screenSize.height/1.5,),
+              Container(
+                decoration: BoxDecoration(
+                  border: Border.all(
+                    color: CustomColor.whiteSecondary, // Border color
+                    width: 3.0,         // Border width
+                  ),
+                  borderRadius: BorderRadius.circular(20.0),
+                ),
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(20.0),
+                  child: Image.asset(
+                    "assets/images/waqarul.jpg",
+                    height: screenSize.height / 1.5,
+                    fit: BoxFit.cover,
+                  ),
+                ),
+              ),
 
-              const SizedBox(height:10,),
+
+              const SizedBox(height:20,),
               const Text(
                 "Hi,",
                 style: TextStyle(

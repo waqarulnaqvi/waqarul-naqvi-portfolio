@@ -17,7 +17,7 @@ class ContactSection extends StatefulWidget {
 
 class _ContactSectionState extends State<ContactSection> {
   final TextEditingController _nameController = TextEditingController();
-  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _mobileController = TextEditingController();
   final TextEditingController _messageController = TextEditingController();
 
   bool _isButtonEnabled = false;
@@ -26,17 +26,17 @@ class _ContactSectionState extends State<ContactSection> {
   void initState() {
     super.initState();
     _nameController.addListener(_updateButtonState);
-    _emailController.addListener(_updateButtonState);
+    _mobileController.addListener(_updateButtonState);
     _messageController.addListener(_updateButtonState);
   }
 
   @override
   void dispose() {
     _nameController.removeListener(_updateButtonState);
-    _emailController.removeListener(_updateButtonState);
+    _mobileController.removeListener(_updateButtonState);
     _messageController.removeListener(_updateButtonState);
     _nameController.dispose();
-    _emailController.dispose();
+    _mobileController.dispose();
     _messageController.dispose();
     super.dispose();
   }
@@ -44,20 +44,20 @@ class _ContactSectionState extends State<ContactSection> {
   void _updateButtonState() {
     setState(() {
       _isButtonEnabled = _nameController.text.isNotEmpty &&
-          _emailController.text.isNotEmpty &&
+          _mobileController.text.isNotEmpty &&
           _messageController.text.isNotEmpty;
     });
   }
 
   void _sendEmail() async {
     final String name = _nameController.text.trim();
-    final String email = _emailController.text.trim();
+    final String mobile = _mobileController.text.trim();
     final String message = _messageController.text.trim();
 
     final Uri emailUri = Uri(
       scheme: 'mailto',
       path: 'syedwaqarul786@gmail.com',
-      query: 'subject=Contact from $name&body=Name: $name\nEmail: $email\nMessage: $message',
+      query: 'subject=Contact from $name&body=Name: $name\nMobile: $mobile\nMessage: $message',
     );
 
     if (await canLaunchUrl(emailUri)) {
@@ -157,7 +157,7 @@ class _ContactSectionState extends State<ContactSection> {
         const SizedBox(width: 20),
         Expanded(
           child: CustomTextField(
-            controller: _emailController,
+            controller: _mobileController,
             hintText: "Mobile",
           ),
         ),
@@ -174,7 +174,7 @@ class _ContactSectionState extends State<ContactSection> {
         ),
         const SizedBox(height: 20),
         CustomTextField(
-          controller: _emailController,
+          controller: _mobileController,
           hintText: "Email",
         ),
       ],
