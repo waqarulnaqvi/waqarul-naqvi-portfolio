@@ -49,14 +49,13 @@ class MainMobile extends StatelessWidget {
                   borderRadius: BorderRadius.circular(20.0),
                   child: Image.asset(
                     "assets/images/waqarul.jpg",
-                    height: screenSize.height / 1.5,
+                    height: screenSize.height / 1.8,
                     fit: BoxFit.cover,
                   ),
                 ),
               ),
 
-
-              const SizedBox(height:20,),
+              const SizedBox(height:30,),
               const Text(
                 "Hi,",
                 style: TextStyle(

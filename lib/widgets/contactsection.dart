@@ -159,6 +159,7 @@ class _ContactSectionState extends State<ContactSection> {
           child: CustomTextField(
             controller: _mobileController,
             hintText: "Mobile",
+            keyboardType:TextInputType.number,
           ),
         ),
       ],
@@ -175,7 +176,8 @@ class _ContactSectionState extends State<ContactSection> {
         const SizedBox(height: 20),
         CustomTextField(
           controller: _mobileController,
-          hintText: "Email",
+          hintText: "Mobile",
+          keyboardType:TextInputType.number,
         ),
       ],
     );

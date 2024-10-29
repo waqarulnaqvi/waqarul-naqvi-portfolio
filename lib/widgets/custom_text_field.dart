@@ -4,12 +4,12 @@ import '../constants/colors.dart';
 
 class CustomTextField extends StatelessWidget {
   const CustomTextField(
-      {super.key, this.controller, this.maxLines=1, this.hintText,this.keyboardType=TextInputType.text});
+      {super.key, this.controller, this.maxLines=1, this.hintText, this.keyboardType=TextInputType.text});
 
   final TextEditingController? controller;
   final int maxLines;
   final String? hintText;
-  final keyboardType;
+  final TextInputType keyboardType;
 
   @override
   Widget build(BuildContext context) {
