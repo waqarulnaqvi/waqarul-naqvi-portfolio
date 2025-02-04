@@ -21,6 +21,30 @@ class MainDesktop extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
+          ConstrainedBox(
+            constraints: const BoxConstraints(
+              maxWidth: kMedDesktopWidth/2.1,
+            ),
+            child: Container(
+              decoration: BoxDecoration(
+                border: Border.all(
+                  color: CustomColor.yellowPrimary.withOpacity(0.8), // Border color
+                  width: 2.0,         // Border width
+                ),
+                borderRadius: BorderRadius.circular(20.0),
+              ),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(20.0),
+                child: Image.asset(
+                  "assets/images/waqarul.jpg",
+                  // height: screenSize.height/1.2 ,
+                  width: screenSize.width / 2.8,
+                  fit: BoxFit.cover,
+                  // fit: screenSize.width> kMedDesktopWidth ?BoxFit.fill: BoxFit.cover,
+                ),
+              ),
+            ),
+          ),
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -58,30 +82,6 @@ class MainDesktop extends StatelessWidget {
                         style: TextStyle(color: CustomColor.whitePrimary),
                       ))),
             ],
-          ),
-          ConstrainedBox(
-            constraints: const BoxConstraints(
-              maxWidth: kMedDesktopWidth/2,
-            ),
-            child: Container(
-              decoration: BoxDecoration(
-                border: Border.all(
-                  color: CustomColor.whiteSecondary, // Border color
-                  width: 3.0,         // Border width
-                ),
-                borderRadius: BorderRadius.circular(20.0),
-              ),
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(20.0),
-                child: Image.asset(
-                  "assets/images/waqarul.jpg",
-                  // height: screenSize.height/1.2 ,
-                  width: screenSize.width / 2.8,
-                  fit: BoxFit.cover,
-                  // fit: screenSize.width> kMedDesktopWidth ?BoxFit.fill: BoxFit.cover,
-                ),
-              ),
-            ),
           ),
         ],
       ),

@@ -40,8 +40,8 @@ class MainMobile extends StatelessWidget {
               Container(
                 decoration: BoxDecoration(
                   border: Border.all(
-                    color: CustomColor.whiteSecondary, // Border color
-                    width: 3.0,         // Border width
+                    color: CustomColor.yellowPrimary.withOpacity(0.8), // Border color
+                    width: 2.0,         // Border width
                   ),
                   borderRadius: BorderRadius.circular(20.0),
                 ),

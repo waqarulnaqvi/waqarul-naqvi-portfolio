@@ -37,7 +37,8 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     final screenSize = MediaQuery.of(context).size;
-
+    final w = screenSize.width;
+    final h = screenSize.height;
     return SafeArea(
       child: LayoutBuilder(
         builder: (context, constraints) {
@@ -47,6 +48,8 @@ class _HomePageState extends State<HomePage> {
             endDrawer: constraints.maxWidth >= kMinDesktopWidth
                 ? null
                 : DrawerMobile(
+                    w: w*0.75,
+                    h: h,
                     onNavItemTap: (int navIndex) {
                       scrollToSection(navIndex);
                       scaffoldKey.currentState
@@ -54,32 +57,32 @@ class _HomePageState extends State<HomePage> {
                     },
                   ),
             appBar: AppBar(
-              backgroundColor: constraints.maxWidth >= kMinDesktopWidth
-                  ? CustomColor.scaffoldBg
-                  : CustomColor.bgLight1,
-              elevation: 0,
-              title: constraints.maxWidth >= kMinDesktopWidth
-                  ? HeaderDesktop(
-                      onNavItemTap: (int navIndex) {
-                        scrollToSection(navIndex);
-                      },
-                      onTap: () {
-                        // _launchIcon(
-                            // "https://www.linkedin.com/in/syed-waqarul-naqvi-android-developer");
-                      },
-                    ):
-                       SiteLogo()
-                  // : HeaderMobile(
-                  //     onTap: () {
-                  //       _launchIcon(
-                  //           "https://www.linkedin.com/in/syed-waqarul-naqvi-android-developer");
-                      // },
-                      // onMenuTap: () {
-                      //   scaffoldKey.currentState
-                      //       ?.openEndDrawer(); // Open the drawer
-                      // },
-                    // ),
-            ),
+                backgroundColor: constraints.maxWidth >= kMinDesktopWidth
+                    ? CustomColor.scaffoldBg
+                    : CustomColor.bgLight1,
+                elevation: 0,
+                title: constraints.maxWidth >= kMinDesktopWidth
+                    ? HeaderDesktop(
+                        onNavItemTap: (int navIndex) {
+                          scrollToSection(navIndex);
+                        },
+                        onTap: () {
+                          // _launchIcon(
+                          // "https://www.linkedin.com/in/syed-waqarul-naqvi-android-developer");
+                        },
+                      )
+                    : SiteLogo()
+                // : HeaderMobile(
+                //     onTap: () {
+                //       _launchIcon(
+                //           "https://www.linkedin.com/in/syed-waqarul-naqvi-android-developer");
+                // },
+                // onMenuTap: () {
+                //   scaffoldKey.currentState
+                //       ?.openEndDrawer(); // Open the drawer
+                // },
+                // ),
+                ),
             body: SingleChildScrollView(
               controller: scrollController,
               scrollDirection: Axis.vertical,
@@ -112,7 +115,6 @@ class _HomePageState extends State<HomePage> {
                     child: const Column(
                       children: [
                         const SizedBox(height: 20),
-
                         Text(
                           "What I can do",
                           style: TextStyle(
@@ -170,8 +172,6 @@ class _HomePageState extends State<HomePage> {
                           ),
                         ),
                         const SizedBox(height: 50),
-
-
                         ConstrainedBox(
                           constraints: const BoxConstraints(maxWidth: 850),
                           child: Wrap(
